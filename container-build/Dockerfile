@@ -1,7 +1,7 @@
 # Use the httpd-parent image as base
 FROM quay.io/redhattraining/httpd-parent
 ENV DOCROOT=/var/www/html
-RUN yum install -y --no-docs --disableplugin=subscription-manager httpd && \
+RUN yum install -y --disableplugin=subscription-manager httpd && \
  yum clean all --disableplugin=subscription-manager -y && \
  chgrp -R 0 /var/log/httpd /var/run/httpd && \
  chmod -R g=u /var/log/httpd /var/run/httpd && \
